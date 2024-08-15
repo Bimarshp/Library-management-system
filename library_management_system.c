@@ -75,3 +75,22 @@ void addBook(struct Book library[], int *numBooks) {
     printf("Book added successfully.\n");
 }
 
+// Function to delete a book from the library
+void deleteBook(struct Book library[], int *numBooks) {
+    int i, ISBN;
+    printf("Enter ISBN of the book to delete: ");
+    scanf("%d", &ISBN);
+
+    for (i = 0; i < *numBooks; i++) {
+        if (library[i].ISBN == ISBN) {
+            // Shift books to fill the gap
+            for (int j = i; j < *numBooks - 1; j++) {
+                library[j] = library[j + 1];
+            }
+            (*numBooks)--;
+            printf("Book deleted successfully.\n");
+            return;
+        }
+    }
+    printf("Book not found.\n");
+}
