@@ -94,3 +94,23 @@ void deleteBook(struct Book library[], int *numBooks) {
     }
     printf("Book not found.\n");
 }
+
+// Function to search for a book in the library
+void searchBook(struct Book library[], int numBooks) {
+    int i, ISBN;
+    printf("Enter ISBN of the book to search: ");
+    scanf("%d", &ISBN);
+
+    for (i = 0; i < numBooks; i++) {
+        if (library[i].ISBN == ISBN) {
+            printf("Book found!\n");
+            printf("Title: %s\n", library[i].title);
+            printf("Author: %s\n", library[i].author);
+            printf("ISBN: %d\n", library[i].ISBN);
+            printf("Quantity: %d\n", library[i].quantity);
+            return;
+        }
+    }
+    printf("Book not found.\n");
+}
+
