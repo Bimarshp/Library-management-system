@@ -55,4 +55,23 @@ int main() {
 
     return 0;
 }
+// Function to add a book to the library
+void addBook(struct Book library[], int *numBooks) {
+    if (*numBooks == MAX_BOOKS) {
+        printf("Library is full. Cannot add more books.\n");
+        return;
+    }
+
+    printf("Enter Book Title: ");
+    scanf(" %[^\n]", library[*numBooks].title);
+    printf("Enter Author Name: ");
+    scanf(" %[^\n]", library[*numBooks].author);
+    printf("Enter ISBN: ");
+    scanf("%d", &library[*numBooks].ISBN);
+    printf("Enter Quantity: ");
+    scanf("%d", &library[*numBooks].quantity);
+
+    (*numBooks)++;
+    printf("Book added successfully.\n");
+}
 
