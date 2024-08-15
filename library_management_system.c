@@ -113,4 +113,20 @@ void searchBook(struct Book library[], int numBooks) {
     }
     printf("Book not found.\n");
 }
+// Function to display all books in the library
+void displayBooks(struct Book library[], int numBooks) {
+    if (numBooks == 0) {
+        printf("Library is empty.\n");
+        return;
+    }
+
+    printf("Books in Library:\n");
+    for (int i = 0; i < numBooks; i++) {
+        printf("Title: %s\n", library[i].title);
+        printf("Author: %s\n", library[i].author);
+        printf("ISBN: %d\n", library[i].ISBN);
+        printf("Quantity: %d\n", library[i].quantity);
+        printf("-----------------------\n");
+    }
+}
 
